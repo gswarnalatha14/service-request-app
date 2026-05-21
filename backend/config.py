@@ -1,6 +1,13 @@
-MYSQL_HOST = 'localhost'
-MYSQL_USER = 'root'
-MYSQL_PASSWORD = ''
-MYSQL_DB = 'service_request_db'
+class Config:
 
-UPLOAD_FOLDER = 'uploads'
+    MYSQL_HOST = "service-request-db-gswarna819-134b.i.aivencloud.com"
+
+    MYSQL_USER = "avnadmin"
+
+    MYSQL_PASSWORD = "AVNS_aIv2M26jGry55W3LF_J"
+
+    MYSQL_DB = "defaultdb"
+
+    MYSQL_PORT = 26950
+
+    MYSQL_CURSORCLASS = "DictCursor"
