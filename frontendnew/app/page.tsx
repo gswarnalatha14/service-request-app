@@ -28,7 +28,7 @@ export default function LoginPage() {
     setError("")
     setLoading(true)
     try {
-      const res = await axios.post("http://127.0.0.1:5000/login", form)
+      const res = await axios.post("https://service-request-app.onrender.com/login", form)
       localStorage.setItem("user_id", res.data.user_id)
       router.push("/dashboard")
     } catch {

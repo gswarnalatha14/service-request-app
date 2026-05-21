@@ -28,7 +28,7 @@ export default function RegisterPage() {
     setError("")
     setLoading(true)
     try {
-      await axios.post("http://127.0.0.1:5000/register", form)
+      await axios.post("https://service-request-app.onrender.com/register", form)
       router.push("/")
     } catch (err: unknown) {
       const axiosError = err as { response?: { data?: { message?: string } } }

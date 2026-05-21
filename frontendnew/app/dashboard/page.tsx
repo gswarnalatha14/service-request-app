@@ -295,7 +295,7 @@ export default function DashboardPage() {
   const fetchRequests = useCallback(async () => {
     if (!userId) return
     try {
-      const res = await axios.get(`http://127.0.0.1:5000/requests/${userId}`)
+      const res = await axios.get(`https://service-request-app.onrender.com/requests/${userId}`)
       setRequests(res.data)
     } catch {
       showToast("error", "Error", "Could not load requests.")
@@ -315,7 +315,7 @@ export default function DashboardPage() {
     setFormError("")
     try {
       data.append("user_id", userId || "")
-      await axios.post("http://127.0.0.1:5000/create-request", data)
+      await axios.post("https://service-request-app.onrender.com/create-request", data)
       showToast("success", "Created!", "Service request submitted.")
       fetchRequests()
       setShowCreate(false)
@@ -331,7 +331,7 @@ export default function DashboardPage() {
     setFormLoading(true)
     setFormError("")
     try {
-      await axios.put(`http://127.0.0.1:5000/update-request/${editReq.id}`, data)
+      await axios.put(`https://service-request-app.onrender.com/update-request/${editReq.id}`, data)
       showToast("success", "Saved", "Request updated successfully.")
       fetchRequests()
       setEditReq(null)
@@ -344,7 +344,7 @@ export default function DashboardPage() {
 
   const deleteRequest = async (id: number) => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/delete-request/${id}`)
+      await axios.delete(`https://service-request-app.onrender.com/delete-request/${id}`)
       showToast("success", "Deleted", "Request removed successfully.")
       fetchRequests()
     } catch {
@@ -354,7 +354,7 @@ export default function DashboardPage() {
 
   const updateStatus = async (id: number, status: string) => {
     try {
-      await axios.put(`http://127.0.0.1:5000/update-status/${id}`, { status })
+      await axios.put(`https://service-request-app.onrender.com/update-status/${id}`, { status })
       showToast("success", "Updated", "Status changed successfully.")
       fetchRequests()
     } catch {
