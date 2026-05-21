@@ -11,3 +11,5 @@ class Config:
     MYSQL_PORT = 26950
 
     MYSQL_CURSORCLASS = "DictCursor"
+    
+    UPLOAD_FOLDER = "uploads"
